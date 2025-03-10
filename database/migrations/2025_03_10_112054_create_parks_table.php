@@ -13,8 +13,11 @@ return new class extends Migration
     {
         Schema::create('parks', function (Blueprint $table) {
             $table->id();
+            $table->string("name");
             $table->string("location");
             $table->integer("total_places");
+            $table->integer("available_places")->default(0);
+            $table->integer("reserved_places")->default(0);
             $table->timestamps();
         });
     }
